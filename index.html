@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <style>
+            .child {
+                position: relative;
+                left: 20px;
+                width: 50px;
+                height: 100;
+                background-color: red;
+                text-align: center;
+                vertical-align:middle;
+            }
+            .yellowChild {
+                position: relative;
+                left: 20px;
+                width: 50px;
+                height: 100;
+                background-color: yellow;
+                text-align: center;
+                vertical-align:middle;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container" style="width: 100px; height: 1200px; background-color: aquamarine;" />
+        <script type="text/javascript">
+            for (var i = 1; i< 12; i++) {
+                var div1 = document.createElement("div");
+                div1.textContent = i;
+                var classNameVal;
+                if (i%2 == 0) {
+                    classNameVal = "child"
+                } else {
+                    classNameVal = "yellowChild"
+                }
+                div1.classList.add(classNameVal);
+                div1.onclick = function () {
+                    alert(this.textContent);
+                }
+                var container = document.getElementById("container");
+                container.appendChild(div1);
+            }        
+        </script>
+    </body>
+</html>
